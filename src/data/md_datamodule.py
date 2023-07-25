@@ -24,9 +24,10 @@ import os
 from pytorch_lightning import LightningDataModule
 from torch_geometric.loader import DataLoader
 import torch_geometric.transforms as T
-
-from .components.datasets import ProtDataset
-from .components.transformMD import GNNTransformMD
+os.chdir(r"/content/MiSaTo_dataset/src/data/components")
+from datasets import ProtDataset
+from transformMD import GNNTransformMD
+os.chdir(r"/content/MiSaTo_dataset/src/data")
 
 class MDDataModule(LightningDataModule):
     """A DataModule implements 4 key methods:
